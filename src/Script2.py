@@ -5,10 +5,10 @@ def resolve(input)-> int:
     for x in input:
         if x == 'U':
             counter = counter + 1
-        else:
+        elif x == 'D':
             counter = counter - 1
+        if counter < 0:
             valley = True
-            
         if counter == 0 and valley:
             valleys = valleys + 1
             valley = False
@@ -76,8 +76,10 @@ class BST:
     
 def main():
     print("Problema del caminante")
-    input = "UUUUDDDUDD"
-    print(f"Valles: {resolve(input)}")
+    inputString = input("Ingresa la cadena: ")
+    #input = "UUUUDDDUDD"
+    #inputString = "UUUDDDDDUU"
+    print(f"Valles: {resolve(inputString)}")
 
     print("Arbol binario de busqueda")
     values = [1, 3, 4, 6, 7, 2, 10, 5]

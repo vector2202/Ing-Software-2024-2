@@ -5,9 +5,9 @@ import string
 import os
 def connectDB():
     connection = pymysql.connect(host='localhost',
-                               user='usuario',
-                               password='contraseña',
-                               database='basededatos')
+                               user='lab',
+                               password='Developer123!',
+                               database='lab_ing_software')
     return connection
 
 #Inserte 1 registro en cada tabla

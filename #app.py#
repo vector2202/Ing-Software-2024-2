@@ -65,13 +65,12 @@ def drop(table:int, _id=None) -> None:
                 for registerRent in registersRent:
                     db.session.delete(registerRent)
                 db.session.delete(register)
-                
         else: 
             borra_usuario(_id)
             registersRent = db.session.query(Renta).filter_by(Renta.id_usuario == _id).all()
             for registerRent in registersRent:
                 db.session.delete(registerRent)
-            print("Borrado con éxito!")
+                print("Borrado con éxito!")
     elif table == 2:
         if _id == None:
             registers = db.session.query(Pelicula).all()

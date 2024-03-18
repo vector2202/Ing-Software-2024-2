@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Usuario</title>
+</head>
+<body>
+    <h1>Modificar Usuario</h1>
+    <form action="{{ url_for('usuario.modificar_usuarios', idUsuario=data.idUsuario) }}" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" value="{{ data.nombre }}">
+        <label for="apPat">Apellido Paterno:</label>
+        <input type="text" id="apPat" name="apPat" value="{{ data.apPat }}">
+        <label for="apMat">Apellido Materno:</label>
+        <input type="text" id="apMat" name="apMat" value="{{ data.apMat }}">
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" value="{{ data.password }}">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{ data.email }}">
+        <label for="super_user">Super Usuario:</label>
+        <input type="checkbox" id="superUser" name="superUser" {% if data.superUser %}checked{% endif %}>
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    <a href="{{ url_for('usuario.ver_usuarios') }}"><button>Volver</button></a>
+</body>
+</html>

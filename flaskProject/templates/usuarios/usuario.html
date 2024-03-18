@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ data.nombre }}</title>
+  </head>
+  <body>
+    <h1>{{ data.nombre }} {{ data.apPat }} {{ data.apMat }}</h1>
+    <p>ID: {{ data.idUsuario }}</p>
+    <p>Email: {{ data.email }}</p>
+    <p>Super Usuario: {{ data.superUser }}</p>
+    <form action="{{ url_for('usuario.modificar_usuarios', idUsuario=data.idUsuario) }}" method="get">
+      <button type="submit">Modificar Usuario</button>
+    </form>
+
+    <form action="{{ url_for('usuario.eliminar_usuarios', idUsuario=data.idUsuario) }}" method="post">
+      <button type="submit">Eliminar Usuario</button>
+    </form>
+
+    <form action="{{ url_for('usuario.ver_usuarios') }}" method="get">
+      <button type="submit">Volver</button>
+    </form>
+
+  </body>
+</html>

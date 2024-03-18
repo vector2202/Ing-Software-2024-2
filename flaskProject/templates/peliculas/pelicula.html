@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ data.nombre }}</title>
+  </head>
+  <body>
+    <h1>{{ data.nombre }}</h1>
+    <p>Género: {{ data.genero }}</p>
+    <p>Duración: {{ data.duracion }}</p>
+    <p>Inventario: {{ data.inventario }}</p>
+    <a href="{{ url_for('pelicula.modificar_peliculas', idPelicula=data.idPelicula) }}"><button>Modificar Película</button></a>
+
+    <form action="{{ url_for('pelicula.eliminar_peliculas', idPelicula=data.idPelicula) }}" method="post">
+      <input type="hidden" name="idPelicula" value="{{ data.idPelicula }}">
+      <button type="submit">Eliminar Película</button>
+      <a href="{{ url_for('pelicula.ver_peliculas') }}"><button>Volver</button></a>
+    </form>
+  </body>
+</html>

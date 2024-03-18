@@ -4,13 +4,13 @@ from alchemyClasses import db
 from flask import flash
 
 def agregar_renta(data):
-    id_renta = data.get("id_renta")
-    id_pelicula = data.get("id_pelicula")
+    id_usuario = data.get("idUsuario")
+    id_pelicula = data.get("idPelicula")
     fecha_renta = data.get("fecha_renta")
     dias_renta = data.get("dias_renta")
     estatus = data.get("estatus")
 
-    renta = Renta(id_renta, id_pelicula, fecha_renta, dias_renta, estatus)
+    renta = Renta(id_usuario, id_pelicula, fecha_renta, dias_renta, estatus)
     db.session.add(renta)
     db.session.commit()
     

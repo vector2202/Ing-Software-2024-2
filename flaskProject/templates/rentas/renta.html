@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de la Renta</title>
+</head>
+<body>
+    <h1>Detalles de la Renta</h1>
+    <p>ID de Renta: {{ data.idRentar }}</p>
+    <p>ID de Usuario: {{ data.idUsuario }}</p>
+    <p>ID de Película: {{ data.idPelicula }}</p>
+    <p>Fecha de Renta: {{ data.fecha_renta }}</p>
+    <p>Días de Renta: {{ data.dias_de_renta }}</p>
+    <p>Estatus: {% if data.estatus %} En tiempo {% else %} Vencida {% endif %}</p>
+    <form action="{{ url_for('renta.modificar_rentas', idRenta=data.idRentar) }}" method="POST">
+        <input type="hidden" name="idRenta" value="{{ data.idRentar }}">
+        <button type="submit">Modificar Renta</button>
+    </form>
+    <a href="{{ url_for('renta.ver_rentas') }}"><button>Volver a Rentas</button></a>
+</body>
+</html>

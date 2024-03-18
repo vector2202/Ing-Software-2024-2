@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Rentas</title>
+    <style>
+      /* Estilo para rentas vencidas */
+      .renta-vencida {
+          color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lista de Rentas</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID de Renta</th>
+          <th>ID de Usuario</th>
+          <th>ID de Película</th>
+          <th>Fecha de Renta</th>
+          <th>Días de Renta</th>
+          <th>Estatus</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for renta in data %}
+        <tr>
+          <td>{{ renta.idRentar }}</td>
+          <td>{{ renta.idUsuario }}</td>
+          <td>{{ renta.idPelicula }}</td>
+          <td>{{ renta.fecha_renta }}</td>
+          <td>{{ renta.dias_de_renta }}</td>
+          <td class="{% if not renta.estatus %}renta-vencida{% endif %}">
+            {% if renta.estatus %}En tiempo{% else %}Vencida{% endif %}
+          </td>
+          <td>
+            <a href="{{ url_for('renta.ver_renta_id', id_renta=renta.idRentar) }}">Ver Detalles</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{{ url_for('renta.agregar_rentas') }}"><button>Agregar Renta</button></a>
+    <a href="{{ url_for('hello_world') }}"><button>Volver al Inicio</button></a>
+  </body>
+</html>

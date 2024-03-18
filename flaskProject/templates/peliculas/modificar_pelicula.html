@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Película</title>
+</head>
+<body>
+    <h1>Modificar Película</h1>
+    <form action="{{ url_for('pelicula.modificar_peliculas', idPelicula=data.idPelicula) }}" method="post">
+        <input type="hidden" name="id_pelicula" value="{{ data.id }}">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" value="{{ data.nombre }}" required>
+        <label for="genero">Género:</label>
+        <input type="text" name="genero" id="genero" value="{{ data.genero }}" required>
+        <label for="duracion">Duración:</label>
+        <input type="text" name="duracion" id="duracion" value="{{ data.duracion }}" required>
+        <label for="inventario">Inventario:</label>
+        <input type="number" name="inventario" id="inventario" value="{{ data.inventario }}" required>
+        <button type="submit">Modificar</button>
+    </form>
+    <a href="{{ url_for('usuario.ver_usuarios') }}"><button>Volver</button></a>
+
+</body>
+</html>

@@ -50,3 +50,4 @@ def modificar_peliculas(idPelicula):
         modificar_pelicula(request.form, id_pelicula=idPelicula)
         return redirect(url_for("pelicula.ver_peliculas"))
         
+    

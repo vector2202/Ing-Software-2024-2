@@ -40,9 +40,6 @@ def modificar_pelicula(data, id_pelicula):
 def eliminar_pelicula(id_pelicula):
      #renta = Renta.query.filter_by(id_pelicula=id_pelicula).first()
     pelicula = Pelicula.query.filter_by(idPelicula=id_pelicula).first()
-    #print("Renta", renta)
-    #if renta != None:
-    #    db.session.delete(renta)
     db.session.delete(pelicula)
     db.session.commit()
     return True

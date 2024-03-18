@@ -1,5 +1,6 @@
 from flask import Blueprint, request, render_template, flash, url_for
 from random import randint
+from alchemyClasses import Usuario
 
 usuario_blueprint = Blueprint('usuario', __name__, url_prefix='/usuario')
 

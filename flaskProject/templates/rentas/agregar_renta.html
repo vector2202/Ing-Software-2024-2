@@ -9,9 +9,9 @@
     <h1>Agregar Renta</h1>
     <form action="{{ url_for('renta.agregar_rentas') }}" method="POST">
         <label for="idUsuario">ID de Usuario:</label>
-        <input type="text" id="idUsuario" name="idUsuario" required><br>
+        <input type="number" id="idUsuario" name="idUsuario" required><br>
         <label for="idPelicula">ID de Película:</label>
-        <input type="text" id="idPelicula" name="idPelicula" required><br>
+        <input type="number" id="idPelicula" name="idPelicula" required><br>
         <label for="fecha_renta">Fecha de Renta:</label>
         <input type="date" id="fecha_renta" name="fecha_renta" required><br>
         <label for="dias_renta">Días de Renta:</label>

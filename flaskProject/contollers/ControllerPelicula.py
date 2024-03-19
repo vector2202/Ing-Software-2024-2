@@ -49,5 +49,3 @@ def modificar_peliculas(idPelicula):
     else:
         modificar_pelicula(request.form, id_pelicula=idPelicula)
         return redirect(url_for("pelicula.ver_peliculas"))
-        
-    

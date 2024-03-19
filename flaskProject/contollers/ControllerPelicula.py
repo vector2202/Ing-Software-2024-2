@@ -40,7 +40,7 @@ def eliminar_peliculas(idPelicula):
         return redirect(url_for("pelicula.ver_pelicula", id_pelicula=idPelicula))
     
 @pelicula_blueprint.route('/peliculas/modificar/<int:idPelicula>', methods=['GET', 'POST'])
-def modificar_peliculas(idPelicula):    
+def modificar_peliculas(idPelicula):
     if request.method == "GET":
         data = obtener_pelicula(idPelicula)
         if data == None:

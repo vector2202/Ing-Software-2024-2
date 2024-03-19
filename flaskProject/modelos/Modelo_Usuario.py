@@ -23,8 +23,7 @@ def modificar_usuario(data, id_usuario):
     password = data.get("password")
     email = data.get("email")
     super_user = data.get("superUser") == "on"
-    print(super_user)
-    print(data)
+    
     usuario = Usuario.query.get(id_usuario)
     usuario.nombre = nombre
     usuario.apPat = ap_pat
@@ -37,7 +36,7 @@ def modificar_usuario(data, id_usuario):
     return True
     
 def eliminar_usuario(id_usuario):
-    #renta = Renta.query.filter_by(id_usuario).delete()
+    Renta.query.filter_by(idUsuario=id_usuario).delete()
     usuario = Usuario.query.filter_by(idUsuario=id_usuario).first()
     db.session.delete(usuario)
     db.session.commit()

@@ -21,12 +21,10 @@ def agregar_pelicula(data):
     
     
 def modificar_pelicula(data, id_pelicula):
-    print("ID:", id_pelicula)
     nombre = data.get("nombre")
     genero = data.get("genero")
     duracion = data.get("duracion")
     inventario = data.get("inventario")
-    print(data)
     
     pelicula = Pelicula.query.get(id_pelicula)
     pelicula.nombre = nombre
@@ -37,7 +35,7 @@ def modificar_pelicula(data, id_pelicula):
     db.session.commit()
     
 def eliminar_pelicula(id_pelicula):
-    Renta.query.filter_by(id_pelicula=id_pelicula).delete()
+    Renta.query.filter_by(idPelicula=id_pelicula).delete()
     pelicula = Pelicula.query.filter_by(idPelicula=id_pelicula).first()
     db.session.delete(pelicula)
     db.session.commit()

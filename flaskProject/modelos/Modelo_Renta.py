@@ -9,10 +9,10 @@ def agregar_renta(data):
     fecha_renta = data.get("fecha_renta")
     dias_renta = data.get("dias_renta")
     estatus = data.get("estatus")
-
     renta = Renta(id_usuario, id_pelicula, fecha_renta, dias_renta, estatus)
     db.session.add(renta)
     db.session.commit()
+    return True
     
 def modificar_renta(id_renta):
     renta = Renta.query.get(id_renta)

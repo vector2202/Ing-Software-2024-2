@@ -13,7 +13,8 @@
           <th>ID</th>
           <th>Nombre</th>
           <th>Email</th>
-          <th>Acciones</th>
+	  <th>SuperUsuario</th>
+          <th>Modificar</th>
         </tr>
       </thead>
       <tbody>
@@ -22,6 +23,7 @@
           <td>{{ usuario.idUsuario }}</td>
           <td>{{ usuario.nombre }} {{ usuario.apPat }} {{ usuario.apMat }}</td>
           <td>{{ usuario.email }}</td>
+	  <td>{{ usuario.superUser }}</td>
           <td>
             <a href="{{ url_for('usuario.ver_usuario_id', idUsuario=usuario.idUsuario) }}">Ver Detalles</a>
           </td>

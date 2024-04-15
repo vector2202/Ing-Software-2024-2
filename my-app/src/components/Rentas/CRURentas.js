@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './CRUDRentas.css'; // Importar archivo de estilos CSS
+import './CRURentas.css';
 
-function CRUDRentas() {
+function CRURentas() {
   const [rentas, setRentas] = useState([]);
   const [nuevaRenta, setNuevaRenta] = useState({
     idCliente: '',
@@ -34,11 +34,11 @@ function CRUDRentas() {
   };
 
   return (
-    <div className="crud-rentas-container"> {/* Utilizar la clase CSS correspondiente */}
-      <h2 className="crud-rentas-header">Rentas</h2> {/* Utilizar la clase CSS correspondiente */}
-      <ul className="crud-rentas-list"> {/* Utilizar la clase CSS correspondiente */}
+    <div className="crud-rentas-container"> {}
+      <h2 className="crud-rentas-header">Rentas</h2> {}
+      <ul className="crud-rentas-list"> {}
         {rentas.map((renta, index) => (
-          <li key={index} className="crud-rentas-item"> {/* Utilizar la clase CSS correspondiente */}
+          <li key={index} className="crud-rentas-item"> {}
             <div>
               <strong>ID Cliente:</strong> {renta.idCliente}
             </div>
@@ -54,7 +54,7 @@ function CRUDRentas() {
             <div>
               <strong>Estatus:</strong> {renta.estatus ? 'Activo' : 'No activo'}
             </div>
-            <button onClick={() => editarRenta(index)} className="crud-rentas-button">Cambiar Estatus</button> {/* Utilizar la clase CSS correspondiente */}
+            <button onClick={() => editarRenta(index)} className="crud-rentas-button">Cambiar Estatus</button> {}
           </li>
         ))}
       </ul>
@@ -62,23 +62,23 @@ function CRUDRentas() {
       <h2>Agregar Renta</h2>
       <div>
         <label>ID Cliente:</label>
-        <input type="number" value={nuevaRenta.idCliente} onChange={(e) => setNuevaRenta({ ...nuevaRenta, idCliente: parseInt(e.target.value) })} className="crud-rentas-input" /> {/* Utilizar la clase CSS correspondiente */}
+        <input type="number" value={nuevaRenta.idCliente} onChange={(e) => setNuevaRenta({ ...nuevaRenta, idCliente: parseInt(e.target.value) })} className="crud-rentas-input" /> {}
       </div>
       <div>
         <label>ID Película:</label>
-        <input type="number" value={nuevaRenta.idPelicula} onChange={(e) => setNuevaRenta({ ...nuevaRenta, idPelicula: parseInt(e.target.value) })} className="crud-rentas-input" /> {/* Utilizar la clase CSS correspondiente */}
+        <input type="number" value={nuevaRenta.idPelicula} onChange={(e) => setNuevaRenta({ ...nuevaRenta, idPelicula: parseInt(e.target.value) })} className="crud-rentas-input" /> {}
       </div>
       <div>
         <label>Fecha:</label>
-        <input type="date" value={nuevaRenta.fecha} onChange={(e) => setNuevaRenta({ ...nuevaRenta, fecha: e.target.value })} className="crud-rentas-input" /> {/* Utilizar la clase CSS correspondiente */}
+        <input type="date" value={nuevaRenta.fecha} onChange={(e) => setNuevaRenta({ ...nuevaRenta, fecha: e.target.value })} className="crud-rentas-input" /> {}
       </div>
       <div>
         <label>Duración:</label>
-        <input type="text" value={nuevaRenta.duracion} onChange={(e) => setNuevaRenta({ ...nuevaRenta, duracion: e.target.value })} className="crud-rentas-input" /> {/* Utilizar la clase CSS correspondiente */}
+        <input type="number" value={nuevaRenta.duracion} onChange={(e) => setNuevaRenta({ ...nuevaRenta, duracion: e.target.value })} className="crud-rentas-input" /> {}
       </div>
-      <button onClick={agregarRenta} className="crud-rentas-button">Agregar</button> {/* Utilizar la clase CSS correspondiente */}
+      <button onClick={agregarRenta} className="crud-rentas-button">Agregar</button> {}
     </div>
   );
 }
 
-export default CRUDRentas;
+export default CRURentas;

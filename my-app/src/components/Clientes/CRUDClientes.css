@@ -1,11 +1,13 @@
-/* Estilos para el componente CRUDClientes */
-
 .crud-clientes-container {
   margin: 20px;
+  background-color: #005f99;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .crud-clientes-header {
   margin-bottom: 10px;
+  color: #ffffff;
 }
 
 .crud-clientes-list {
@@ -15,12 +17,27 @@
 
 .crud-clientes-item {
   margin-bottom: 5px;
+  color: #ffffff;
 }
 
 .crud-clientes-input {
   margin-right: 10px;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .crud-clientes-button {
   margin-right: 10px;
+  padding: 8px 15px;
+  background-color: #ffffff;
+  color: #005f99;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.crud-clientes-button:hover {
+  background-color: #004080;
+  color: #ffffff;
 }

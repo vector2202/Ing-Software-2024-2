@@ -1,0 +1,26 @@
+/* Estilos para el componente CRUDClientes */
+
+.crud-clientes-container {
+  margin: 20px;
+}
+
+.crud-clientes-header {
+  margin-bottom: 10px;
+}
+
+.crud-clientes-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.crud-clientes-item {
+  margin-bottom: 5px;
+}
+
+.crud-clientes-input {
+  margin-right: 10px;
+}
+
+.crud-clientes-button {
+  margin-right: 10px;
+}

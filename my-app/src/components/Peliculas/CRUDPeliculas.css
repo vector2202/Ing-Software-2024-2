@@ -1,0 +1,26 @@
+/* Estilos para el componente CRUDPeliculas */
+
+.crud-peliculas-container {
+  margin: 20px;
+}
+
+.crud-peliculas-header {
+  margin-bottom: 10px;
+}
+
+.crud-peliculas-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.crud-peliculas-item {
+  margin-bottom: 5px;
+}
+
+.crud-peliculas-input {
+  margin-right: 10px;
+}
+
+.crud-peliculas-button {
+  margin-right: 10px;
+}
